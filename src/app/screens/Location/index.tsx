@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useGetData } from "../../hooks/useGetData";
 
 interface Character {
@@ -9,10 +9,10 @@ interface Character {
   gender: string;
 }
 
-function Detail() {
+function Location() {
   const { id } = useParams();
   const { data, error, loading } = useGetData<Character>(
-    `https://rickandmortyapi.com/api/character/${id}`
+    `https://rickandmortyapi.com/api/location/${id}`
   );
 
   if (loading) {
@@ -32,17 +32,14 @@ function Detail() {
     <div>
       {data && (
         <>
-          <h1>Detalle {data.name}</h1>
-          <img src={data.image}></img>
-          <p><b>Nombre:</b> {data.status}</p>
-          <p><b>Especie:</b> {data.species}</p>
+          <h1>Detalle de {data.name}</h1>
+          <p>Nombre: {data.name}</p>
           <p><b>Tipo:</b> {data.type}</p>
-          <p><b>Género:</b> {data.gender}</p>
-          <Link to={`/location/${id}`}><p><b>Origen:</b> {data.origin.name}</p></Link>
+          <p><b>Dimensión:</b> {data.dimension}</p>
         </>
       )}
     </div>
   );
 }
 
-export default Detail;
+export default Location;

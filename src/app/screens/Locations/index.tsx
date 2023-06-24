@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Artist from "../../components/Artist";
-import "./styles.css";
+import CardLocations from "../../components/CardLocations";
+//import "./styles.css";
 
-function Home() {
+function Locations() {
   const [characters, setCharacters] = useState();
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function Home() {
 
   async function requestCharacters() {
     try {
-      const res = await fetch(`https://rickandmortyapi.com/api/character`);
+      const res = await fetch(`https://rickandmortyapi.com/api/location`);
       const json = await res.json();
 
       setCharacters(json.results);
@@ -24,19 +24,17 @@ function Home() {
     <main>
       <div>
       <div>
-      <h1 className="title">Personajes</h1>
+      <h1 className="title">Ubicaciones</h1>
       </div>
       
       {characters ? (
         characters.map((character) => {
           return (
-            <Artist
+            <CardLocations
               key={character.id}
               id={character.id}
-              image={character.image}
               name={character.name}
-              song={character.status}
-              views={character.episode.length}
+              type={character.type}
             />
           );
         })
@@ -49,4 +47,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Locations;

@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
+import "./styles.css";
 
 function Nav() {
   return (
     <>
-      <p>🥑</p>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Personajes </Link>   
+        </li>
+        <li>
+          <Link to="/Locations">Ubicaciones </Link>
+        </li>
+        <li>
+          <Link to="/Episodes">Episodios </Link>
         </li>
       </ul>
     </>

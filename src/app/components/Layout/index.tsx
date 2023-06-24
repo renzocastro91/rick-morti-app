@@ -6,6 +6,7 @@ function Layout() {
     <>
       <Nav />
       <Outlet />
+      
     </>
   );
 }

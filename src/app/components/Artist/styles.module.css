@@ -1,13 +1,13 @@
 .card {
   display: inline-block;
-  width: 120px;
-  height: 270px;
+  width: 400px;
+  height: 300px;
   border-radius: 8px;
-  background-color: #2b2a2a;
+  background-color: #383838;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease-in-out;
-  margin-right: 10px; /* Ajusta la separación horizontal entre los componentes */
-  margin-top: 10px;
+  margin-right: 15px; /* Ajusta la separación horizontal entre los componentes */
+  margin-top: 45px;
 }
 
 .card:hover {
@@ -38,7 +38,7 @@
 
 h2 {
   margin-bottom: 4px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
   text-align: left;
   padding: 0px 15px 0px;

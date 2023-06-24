@@ -1,5 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useGetData } from "../../hooks/useGetData";
+import Artist from "../../components/Artist";
+import { useEffect, useState } from "react";
 
 interface Character {
   name: string;
@@ -9,10 +11,10 @@ interface Character {
   gender: string;
 }
 
-function Detail() {
+function Episode() {
   const { id } = useParams();
   const { data, error, loading } = useGetData<Character>(
-    `https://rickandmortyapi.com/api/character/${id}`
+    `https://rickandmortyapi.com/api/episode/${id}`
   );
 
   if (loading) {
@@ -28,21 +30,24 @@ function Detail() {
     );
   }
 
+//
+
+//
+
   return (
     <div>
       {data && (
         <>
-          <h1>Detalle {data.name}</h1>
-          <img src={data.image}></img>
-          <p><b>Nombre:</b> {data.status}</p>
-          <p><b>Especie:</b> {data.species}</p>
-          <p><b>Tipo:</b> {data.type}</p>
-          <p><b>Género:</b> {data.gender}</p>
-          <Link to={`/location/${id}`}><p><b>Origen:</b> {data.origin.name}</p></Link>
+          <h1>Detalle de Episodio {data.name}</h1>
+          <p>Nombre: {data.name}</p>
+          <p><b>Episodio y Temporada:</b> {data.episode}</p>
+          <p><b>Fecha de estreno: </b> {data.air_date}</p>
+          <h2>Personajes que aparecen en este episodio son: </h2>
         </>
       )}
+      
     </div>
   );
 }
 
-export default Detail;
+export default Episode;
