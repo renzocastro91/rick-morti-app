@@ -1,8 +1,18 @@
 ul {
+    display: flex; /* Aplica un contenedor flexible a la lista */
+    align-items: center;
     list-style: none;
    
 }
 li {
     display: inline;
-    margin-right: 35px;
+    margin-right: 75px;
 }
+
+.logo {
+    display: inline;
+    width: 120px; 
+    height: auto; 
+    margin-right: 500px;
+    border-radius: 50%;
+  }

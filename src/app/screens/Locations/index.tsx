@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CardLocations from "../../components/CardLocations";
-//import "./styles.css";
+import "./styles.css";
 
 function Locations() {
   const [characters, setCharacters] = useState();
@@ -22,7 +22,7 @@ function Locations() {
 
   return (
     <main>
-      <div>
+      <div className="cardLocations">
       <div>
       <h1 className="title">Ubicaciones</h1>
       </div>
@@ -41,6 +41,7 @@ function Locations() {
       ) : (
         <h1>Cargando...</h1>
       )}
+      <br></br><br></br><br></br>
       </div>
       
     </main>

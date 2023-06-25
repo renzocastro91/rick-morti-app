@@ -22,7 +22,7 @@ function Home() {
 
   return (
     <main>
-      <div>
+      <div className="cardHome">
       <div>
       <h1 className="title">Personajes</h1>
       </div>
@@ -43,8 +43,8 @@ function Home() {
       ) : (
         <h1>Cargando...</h1>
       )}
-      </div>
-      
+      <br></br><br></br><br></br>
+      </div>      
     </main>
   );
 }

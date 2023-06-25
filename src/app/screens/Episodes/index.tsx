@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CardEpisodes from "../../components/CardEpisodes";
-//import "./styles.css";
+import "./styles.css";
 
 function Episodes() {
   const [characters, setCharacters] = useState();
@@ -22,7 +22,7 @@ function Episodes() {
 
   return (
     <main>
-      <div>
+      <div className="cardEpisodes">
       <div>
       <h1 className="title">Episodios</h1>
       </div>
@@ -41,6 +41,7 @@ function Episodes() {
       ) : (
         <h1>Cargando...</h1>
       )}
+      <br></br><br></br><br></br>
       </div>
       
     </main>

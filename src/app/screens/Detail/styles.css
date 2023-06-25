@@ -1,0 +1,12 @@
+.cardDetail{
+    background-color: rgba(17, 17, 19, 0.89);
+    
+  }
+
+  .img-detail{
+    border-radius: 50%;
+  }
+
+  .p-d{
+    color: chartreuse;
+  }
