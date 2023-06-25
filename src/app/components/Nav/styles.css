@@ -7,12 +7,22 @@ ul {
 li {
     display: inline;
     margin-right: 75px;
+    color: chartreuse;
 }
-
+.link-t{
+    color: chartreuse;
+}
 .logo {
     display: inline;
     width: 120px; 
     height: auto; 
     margin-right: 500px;
     border-radius: 50%;
+  }
+
+  .nav-d{
+    background-color: #333;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    
   }

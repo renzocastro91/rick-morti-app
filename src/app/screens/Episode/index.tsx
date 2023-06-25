@@ -67,7 +67,7 @@ function Episode() {
           <p>
             <b>Fecha de estreno: </b> {data.air_date}
           </p>
-          <h2>Personajes que aparecen en este episodio son: </h2>
+          <h2 className="h2-ep">Personajes que aparecen en este episodio son: </h2>
           {characters.length > 0 ? (
             characters.map((character) => (
               <Artist
