@@ -32,7 +32,8 @@ function Detail() {
         <>
           <h1>{data.name}</h1>
           <img src={data.image} className="img-detail" alt={data.name} />
-          <p className="p-d"><b>Nombre:</b> {data.status}</p>
+          <p className="p-d"><b>Nombre:</b> {data.name}</p>
+          <p className="p-d"><b>Estado:</b> {data.status}</p>
           <p className="p-d"><b>Especie:</b> {data.species}</p>
           <p className="p-d"><b>Tipo:</b> {data.type}</p>
           <p className="p-d"><b>Género:</b> {data.gender}</p>
