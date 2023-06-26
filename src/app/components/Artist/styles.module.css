@@ -3,7 +3,7 @@
   width: 400px;
   height: 300px;
   border-radius: 8px;
-  background-color: #55e71228;
+  background-color: #25172c;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease-in-out;
   margin-right: 15px; /* Ajusta la separación horizontal entre los componentes */
@@ -50,8 +50,6 @@ h2 {
   text-align: left;
   padding: 0px 15px;
 }
-
-/* styles.module.css */
 
 .heartIconRed {
   color: red;
