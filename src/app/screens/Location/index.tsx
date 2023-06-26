@@ -2,17 +2,9 @@ import { useParams} from "react-router-dom";
 import { useGetData } from "../../hooks/useGetData";
 import "./styles.css"
 
-interface Character {
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-}
-
 function Location() {
   const { id } = useParams();
-  const { data, error, loading } = useGetData<Character>(
+  const { data, error, loading } = useGetData(
     `https://rickandmortyapi.com/api/location/${id}`
   );
 
@@ -31,7 +23,7 @@ function Location() {
 
   return (
     <div className="cardLocation">
-      <br></br>
+      <br />
       {data && (
         <>
           <h1>{data.name}</h1>
@@ -40,7 +32,7 @@ function Location() {
           <p className="p-d"><b>Dimensión:</b> {data.dimension}</p>
         </>
       )}
-      <br></br><br></br><br></br>
+      <br /><br /><br />
     </div>
   );
 }

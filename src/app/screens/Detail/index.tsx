@@ -2,21 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import { useGetData } from "../../hooks/useGetData";
 import "./styles.css";
 
-interface Character {
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: {
-    name: string;
-    url: string;
-  };
-}
-
 function Detail() {
   const { id } = useParams();
-  const { data, error, loading } = useGetData<Character>(
+  const { data, error, loading } = useGetData(
     `https://rickandmortyapi.com/api/character/${id}`
   );
 

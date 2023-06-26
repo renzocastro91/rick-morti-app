@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 type LocationsProps = {
+  id: string;
   name: string;
   type: string;
 };

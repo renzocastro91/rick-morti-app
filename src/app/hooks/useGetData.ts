@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 
 interface Action {
   type: "INIT_REQUEST" | "REQUEST_FAILURE" | "REQUEST_SUCCESS";
@@ -8,31 +8,41 @@ interface Action {
   };
 }
 
-function reducer(state, action: Action) {
+interface State {
+  loading: boolean;
+  error: any;
+  data: any;
+}
+
+function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "INIT_REQUEST":
       return {
+        ...state,
         loading: true,
         error: null,
         data: null,
       };
     case "REQUEST_FAILURE":
       return {
+        ...state,
         loading: false,
-        error: action.payload.error,
+        error: action.payload?.error,
         data: null,
       };
     case "REQUEST_SUCCESS":
       return {
+        ...state,
         loading: false,
         error: null,
-        data: action.payload.data,
+        data: action.payload?.data,
       };
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
 
-// Custom hook
-export function useGetData<T>(API_URL: string) {
+export function useGetData(API_URL: string) {
   const [state, dispatch] = useReducer(reducer, {
     loading: true,
     data: null,

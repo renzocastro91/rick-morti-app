@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import CardEpisodes from "../../components/CardEpisodes";
 import "./styles.css";
 
+interface Character {
+  id: number;
+  name: string;
+  episode: string;
+}
+
 function Episodes() {
-  const [characters, setCharacters] = useState();
+  const [characters, setCharacters] = useState<Character[]>([]);
 
   useEffect(() => {
     requestCharacters();
@@ -23,27 +29,26 @@ function Episodes() {
   return (
     <main>
       <div className="cardEpisodes">
-      <div>
-      <h1 className="title">Episodios</h1>
+        <div>
+          <h1 className="title">Episodios</h1>
+        </div>
+
+        {characters.length > 0 ? (
+          characters.map((character: Character) => {
+            return (
+              <CardEpisodes
+                key={character.id}
+                id={character.id.toString()}
+                name={character.name}
+                type={character.episode}
+              />
+            );
+          })
+        ) : (
+          <h1>Cargando...</h1>
+        )}
+        <br /><br /><br />
       </div>
-      
-      {characters ? (
-        characters.map((character) => {
-          return (
-            <CardEpisodes
-              key={character.id}
-              id={character.id}
-              name={character.name}
-              type={character.episode}
-            />
-          );
-        })
-      ) : (
-        <h1>Cargando...</h1>
-      )}
-      <br></br><br></br><br></br>
-      </div>
-      
     </main>
   );
 }

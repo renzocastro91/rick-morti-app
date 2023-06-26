@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 type ArtistProps = {
+  id: string; // Agregar la propiedad 'id' al tipo 'ArtistProps'
   name: string;
   category: string;
   image: string;

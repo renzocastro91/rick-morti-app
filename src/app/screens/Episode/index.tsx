@@ -17,7 +17,7 @@ interface Character {
 
 function Episode() {
   const { id } = useParams();
-  const { data, error, loading } = useGetData<Character>(
+  const { data, error, loading } = useGetData(
     `https://rickandmortyapi.com/api/episode/${id}`
   );
 
@@ -72,10 +72,10 @@ function Episode() {
             characters.map((character) => (
               <Artist
                 key={character.id}
-                id={character.id}
+                id={character.id.toString()}
                 image={character.image}
                 name={character.name}
-                song={character.status}
+                category={character.status}
                 views={character.episode.length}
               />
             ))
