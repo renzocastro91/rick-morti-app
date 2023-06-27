@@ -2,25 +2,29 @@ import { useEffect, useState } from "react";
 import CardEpisodes from "../../components/CardEpisodes";
 import "./styles.css";
 
-interface Character {
+interface Episode {
   id: number;
   name: string;
   episode: string;
 }
 
 function Episodes() {
-  const [characters, setCharacters] = useState<Character[]>([]);
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
+  const [nextPage, setNextPage] = useState<string | undefined>(undefined);
+  const [prevPage, setPrevPage] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    requestCharacters();
+    requestEpisodes();
   }, []);
 
-  async function requestCharacters() {
+  async function requestEpisodes(url?: string) {
     try {
-      const res = await fetch(`https://rickandmortyapi.com/api/episode`);
+      const res = await fetch(url || `https://rickandmortyapi.com/api/episode`);
       const json = await res.json();
 
-      setCharacters(json.results);
+      setEpisodes(json.results);
+      setNextPage(json.info.next);
+      setPrevPage(json.info.prev);
     } catch (e) {
       console.error(e);
     }
@@ -33,21 +37,38 @@ function Episodes() {
           <h1 className="title">Episodios</h1>
         </div>
 
-        {characters.length > 0 ? (
-          characters.map((character: Character) => {
+        {episodes.length > 0 ? (
+          episodes.map((episode) => {
             return (
               <CardEpisodes
-                key={character.id}
-                id={character.id.toString()}
-                name={character.name}
-                type={character.episode}
+                key={episode.id}
+                id={episode.id.toString()}
+                name={episode.name}
+                type={episode.episode}
               />
             );
           })
         ) : (
           <h1>Cargando...</h1>
         )}
-        <br /><br /><br />
+        <br></br><br></br><br></br>
+        <div className="pagination">
+          <button
+            className="buttonp"
+            disabled={!prevPage}
+            onClick={() => requestEpisodes(prevPage)}
+          >
+            Anterior
+          </button>
+          <button
+            className="buttonp"
+            disabled={!nextPage}
+            onClick={() => requestEpisodes(nextPage)}
+          >
+            Siguiente
+          </button>
+        </div>
+        <br></br>
       </div>
     </main>
   );

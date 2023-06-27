@@ -9,18 +9,22 @@ interface Location {
 }
 
 function Locations() {
-  const [characters, setCharacters] = useState<Location[]>([]);
+  const [locations, setLocations] = useState<Location[]>([]);
+  const [nextPage, setNextPage] = useState<string | undefined>(undefined);
+  const [prevPage, setPrevPage] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    requestCharacters();
+    requestLocations();
   }, []);
 
-  async function requestCharacters() {
+  async function requestLocations(url?: string) {
     try {
-      const res = await fetch(`https://rickandmortyapi.com/api/location`);
+      const res = await fetch(url || `https://rickandmortyapi.com/api/location`);
       const json = await res.json();
 
-      setCharacters(json.results);
+      setLocations(json.results);
+      setNextPage(json.info.next);
+      setPrevPage(json.info.prev);
     } catch (e) {
       console.error(e);
     }
@@ -33,8 +37,8 @@ function Locations() {
           <h1 className="title">Ubicaciones</h1>
         </div>
 
-        {characters.length > 0 ? (
-          characters.map((location) => {
+        {locations.length > 0 ? (
+          locations.map((location) => {
             return (
               <CardLocations
                 key={location.id}
@@ -47,7 +51,24 @@ function Locations() {
         ) : (
           <h1>Cargando...</h1>
         )}
-        <br /><br /><br />
+        <br></br><br></br><br></br>
+        <div className="pagination">
+          <button
+            className="buttonp2"
+            disabled={!prevPage}
+            onClick={() => requestLocations(prevPage)}
+          >
+            Anterior
+          </button>
+          <button
+            className="buttonp2"
+            disabled={!nextPage}
+            onClick={() => requestLocations(nextPage)}
+          >
+            Siguiente
+          </button>
+        </div>
+        <br></br>
       </div>
     </main>
   );

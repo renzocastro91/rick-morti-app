@@ -30,6 +30,7 @@ function Location() {
           <p className="p-d"><b>Nombre:</b> {data.name}</p>
           <p className="p-d"><b>Tipo:</b> {data.type}</p>
           <p className="p-d"><b>Dimensión:</b> {data.dimension}</p>
+          <p className="p-d"><b>Creado:</b> {data.created}</p>
         </>
       )}
       <br /><br /><br />

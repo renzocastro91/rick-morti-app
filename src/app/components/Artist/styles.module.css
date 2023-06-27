@@ -3,11 +3,13 @@
   width: 400px;
   height: 300px;
   border-radius: 8px;
-  background-color: #25172c;
+  background-color: #fc0101e7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease-in-out;
   margin-right: 15px; /* Ajusta la separación horizontal entre los componentes */
-  margin-top: 45px;
+  margin-top: 30px;
+  max-height: 500px;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -38,16 +40,18 @@
 
 h2 {
   margin-bottom: 4px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   padding: 0px 15px 0px;
+  color: #fffafa;
 }
 
 .category {
   font-size: 14px;
-  color: #a7a7a7;
-  text-align: left;
+  color: #0a0a0a;
+  text-align: center;
+  margin-left: 0;
   padding: 0px 15px;
 }
 
@@ -60,8 +64,8 @@ h2 {
 }
 
 .enlargedCard {
-  width: 250px; /* Ajusta el ancho de la tarjeta según sea necesario */
-  height: 470px; /* Ajusta la altura de la tarjeta según sea necesario */
+  width: 250px; 
+  height: 470px; 
 }
 
 .favoriteButton {
@@ -93,3 +97,14 @@ h2 {
   font-size: 12px;
   color: #000;
 }
+
+.link{
+  color: #000;
+}
+
+.cp{
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+}
+

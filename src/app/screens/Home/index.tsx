@@ -12,17 +12,21 @@ interface Character {
 
 function Home() {
   const [characters, setCharacters] = useState<Character[]>([]);
+  const [nextPage, setNextPage] = useState<string | null>(null);
+  const [prevPage, setPrevPage] = useState<string | null>(null);
 
   useEffect(() => {
     requestCharacters();
   }, []);
 
-  async function requestCharacters() {
+  async function requestCharacters(url?: string) {
     try {
-      const res = await fetch(`https://rickandmortyapi.com/api/character`);
+      const res = await fetch(url || `https://rickandmortyapi.com/api/character`);
       const json = await res.json();
 
       setCharacters(json.results);
+      setNextPage(json.info.next);
+      setPrevPage(json.info.prev);
     } catch (e) {
       console.error(e);
     }
@@ -51,7 +55,24 @@ function Home() {
         ) : (
           <h1>Cargando...</h1>
         )}
-        <br /><br /><br />
+        <br></br><br></br><br></br>
+        <div className="pagination">
+          <button
+            className="buttonp1"
+            disabled={!prevPage}
+            onClick={() => requestCharacters(prevPage || undefined)}
+          >
+            Anterior
+          </button>
+          <button
+            className="buttonp1"
+            disabled={!nextPage}
+            onClick={() => requestCharacters(nextPage || undefined)}
+          >
+            Siguiente
+          </button>
+        </div>
+        <br></br>
       </div>
     </main>
   );
