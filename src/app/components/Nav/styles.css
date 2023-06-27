@@ -14,10 +14,10 @@ li {
 }
 .logo {
     display: inline;
-    width: 120px; 
+    width: 200px; 
     height: auto; 
     margin-right: 500px;
-    border-radius: 50%;
+    border-radius: 30px;
   }
 
   .nav-d{

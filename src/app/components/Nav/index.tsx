@@ -6,7 +6,7 @@ function Nav() {
       <div className="nav-d">
           <ul>
         <li>
-          <img src="https://e7.pngegg.com/pngimages/539/667/png-clipart-rick-sanchez-rick-and-morty-coloring-book-exclusive-and-unique-rick-and-morty-season-3-television-show-rick-and-morty-season-2-rick-morty-space-morty-smith.png" className="logo"></img>
+          <img src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" className="logo"></img>
         </li>
         <li>
           <Link className="link-t" to="/">Personajes </Link>   
