@@ -15,7 +15,7 @@ function CardEpisodes(props: LocationsProps) {
         <h2>{props.name}</h2>
         <p className={styles.category}>{props.type}</p>
       </div>
-      <br></br>
+      <br></br><br></br>
       <Link to={`/episode/${props.id}`}>Ver más información</Link>
     </div>
   );

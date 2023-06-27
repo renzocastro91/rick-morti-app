@@ -36,6 +36,7 @@ function Home() {
     <main>
       <div className="cardHome">
         <div>
+          <br></br>
           <h1 className="title">Personajes</h1>
         </div>
 

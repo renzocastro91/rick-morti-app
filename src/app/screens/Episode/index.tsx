@@ -57,6 +57,7 @@ function Episode() {
     <div className="cardEpisode">
       {data && (
         <>
+        <br></br>
           <h1>Episodio {data.name}</h1>
           <p>
             <b>Nombre:</b> {data.name}
@@ -67,7 +68,7 @@ function Episode() {
           <p>
             <b>Fecha de estreno: </b> {data.air_date}
           </p>
-          <h2 className="h2-ep">Personajes que aparecen en este episodio son: </h2>
+          <h2>Personajes que aparecen en este episodio son: </h2>
           {characters.length > 0 ? (
             characters.map((character) => (
               <Artist
@@ -90,3 +91,4 @@ function Episode() {
 }
 
 export default Episode;
+ 

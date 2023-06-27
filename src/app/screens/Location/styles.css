@@ -1,8 +1,9 @@
 .cardLocation{
-    background-color: rgba(26, 26, 26, 0.753);
+    background-color: rgba(31, 31, 30, 0.842);
     border-radius: 30px;
 }
 
 .p-d{
-    color: chartreuse;
+    color: rgb(255, 255, 255);
 }
+

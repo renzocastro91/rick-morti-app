@@ -34,6 +34,7 @@ function Episodes() {
     <main>
       <div className="cardEpisodes">
         <div>
+          <br></br>
           <h1 className="title">Episodios</h1>
         </div>
 

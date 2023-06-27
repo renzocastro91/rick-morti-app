@@ -3,7 +3,9 @@
     width: 300px;
     height: 200px;
     border-radius: 8px;
-    background-color: #12d61be3;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/071/470/non_2x/abstract-orange-and-yellow-gradient-stripes-motion-blur-on-black-background-texture-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease-in-out;
     margin-right: 10px; /* Ajusta la separación horizontal entre los componentes */

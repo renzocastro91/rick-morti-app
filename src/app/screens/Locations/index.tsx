@@ -34,6 +34,7 @@ function Locations() {
     <main>
       <div className="cardLocations">
         <div>
+          <br></br>
           <h1 className="title">Ubicaciones</h1>
         </div>
 

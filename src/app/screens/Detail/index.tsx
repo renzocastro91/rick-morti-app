@@ -30,6 +30,7 @@ function Detail() {
     <div className="cardDetail">
       {data && (
         <>
+          <br></br>
           <h1>{data.name}</h1>
           <img src={data.image} className="img-detail" alt={data.name} />
           <p className="p-d"><b>Nombre:</b> {data.name}</p>

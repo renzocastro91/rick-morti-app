@@ -3,11 +3,13 @@
     width: 300px;
     height: 200px;
     border-radius: 8px;
-    background-color: #a302a3e7;
+    background-image: url("https://png.pngtree.com/background/20220731/original/pngtree-grunge-brush-texture-background-red-and-black-splatter-picture-image_1912064.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease-in-out;
-    margin-right: 10px; /* Ajusta la separación horizontal entre los componentes */
-    margin-top: 10px;
+    margin-right: 10px; 
+    margin-top: 20px;
     max-height: 200px;
     overflow: hidden;
   }
